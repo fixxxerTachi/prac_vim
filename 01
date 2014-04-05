@@ -13,6 +13,7 @@ jf + ljljflajl var
 /*** *カーソルの単語を検索　****/
 /*** cw　単語を削除して挿入モード　****/
 /*** dw  単語を削除　***/
+/*** c$ カーソルから行末まで削除して挿入モード */
 if you are copy wieth this,
 we'll lauch as soon as we have the copy
 
@@ -27,3 +28,89 @@ this is a sen
 .blog,news { background-image: url(/sprite.png); }
 .blog { background-positoin: 10px 0px;}
 .news { background-positoin: -170px 0px;}
+
+
+/**** 複数数の連続した単語を削除 ***/
+/** d{2}w **/
+/** c{2}w **/
+/** dw. 単語を削除して繰り返す **/
+Delete more than one word
+
+/*** 挿入モードでの削除 ***/
+<c-h> 直前の文字を削除
+<c-w> 直前の単語を削除
+<c-u> 行頭まで削除
+
+
+/*** 挿入ノーマルモード <c-o> ***/
+挿入モードでノーマルモードに切り替え
+挿入モードでカーソルを中央に移動したい
+<c-o>zz
+
+/***　行頭の本のタイトルをレジスタにヤンクしてから挿入モードで行の末尾に貼り付ける ***/
+/* yt, ,までをヤンク？ */
+/* jA 次の行に移動してカーソルを行末に移動して挿入モード */
+/* :reg レジスタの内容を確認 */
+/* <c-r>0 0番目のレジスタを貼り付け */
+practical Vim, by Drew Neil
+Read Drew Neil's 
+
+/*** ちょっとした計算 ****/
+挿入モードで<c-r>=8*8<cr>
+
+/*** Unicod ***/
+ga カーソル文字のコードを確認
+<c-v>u{コード} 16進数での文字を挿入
+
+/*** 置換モード **/
+R 置換モード
+r{char} カーソル文字を置換して挿入モード
+
+fjsfjls8o
+
+/*** ヴィジュアルモード ***/
+viw 単語を選択
+c　単語を削除して挿入モード
+
+This is visual mode practice.
+
+/***ヴィジュアルモードの有効化***
+v 文字指向
+V 行指向
+<c-v> 矩形
+gv 直前の選択範囲を再度選択
+それぞれのモードで同じモードのキーを押すとノーマルモードに戻る
+o 始点と終点をいれかえ
+
+fjsljflsl
+fjsljflsl
+
+/*** タグの中身を選択する(visually select inside the tag) ***/
+$vit
+
+<a href="#">hoge</a>
+<a href="#">three</a>
+<a href="#">three</a>
+
+
+
+<!doctype html>
+<html>
+	<head><title>Practical Viewm</title></head>
+	<body><h1>Practival Vim</h1></body>
+</html>
+
+
+
+/*** シェルでプログラムを実行 ***/
+:!{cmd} ex  :!php % で現在のスクリプトを実行できる
+:shell
+<c-z>でvimを実行しているプロセスが一時停止される
+	実行中のジョブを知るには job コマンド
+	fg コマンドで一時停止状態のジョブをフォアグランドにして再開
+
+
+/*** 画面の分割 ***/
+:clo[se] アクティブなウィンドウを閉じる
+:on[ly] アクティブなウィンドウ以外を閉じる
+

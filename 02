@@ -1,0 +1,20 @@
+/**** 複数ファイルの編集 ***/
+vim * でカレントディレクトリのすべてのファイルをバッファに読み込む
+
+/***　バッファの切り替え ***/
+:ls　バッファのリストを表示
+:b{number}  
+:bn :bp (buffer-next)(buffer-prev)
+<c-^> 現在のファイルと代替えファイルとの切り替え
+
+/*** バッファの削除 ***/
+:bd {number} {number} (buffer-delete)
+
+
+/*** 違うディレクトリのファイルを編集 ***/
+:e {filepath}/{filename}
+  
+  /** :find {filename} でファイルの検索 **/
+  :set path+=tests/**  でpathの設定　**すべてのサブディレクトリを含む
+  :find {filename}
+
