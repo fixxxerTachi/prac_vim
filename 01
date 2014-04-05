@@ -11,7 +11,19 @@ abaaaalllllallllll
 jf + ljljflajl var
 
 /*** *カーソルの単語を検索　****/
-/*** c　単語を削除して挿入モード　****/
+/*** cw　単語を削除して挿入モード　****/
+/*** dw  単語を削除　***/
 if you are copy wieth this,
 we'll lauch as soon as we have the copy
 
+/**** daw 単語を削除する ***/
+this is a sen
+
+/**** blogをnewsに置き換えて0pxを-180pxにする***/
+/** yyp カーソル行をコピーして貼り付け ***/
+/** cW　単語を削除して挿入モード ***/
+/** f0　0に移動　**/
+/** 180<c-x> で　数字を-180 **/
+.blog,news { background-image: url(/sprite.png); }
+.blog { background-positoin: 10px 0px;}
+.news { background-positoin: -170px 0px;}
