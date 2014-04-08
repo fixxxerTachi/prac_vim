@@ -1,0 +1,52 @@
+body  { color: #898989; }
+a     { color: #88dd88; }
+stong { color: #7999aa; }
+(a.k.a)
+/*** カラーコードを検索 ***/
+\v 	特殊文字を有効化？できる //=>正規表現に向いている 
+\V							//=>文章検索に向いている 
+/\v#([0-9a-fA-F]{6}|[0-9a-fA-f]{3})
+/\v#(\x{6}|\x{3})
+/\Va.b.c
+	.は任意の一文字を表すが\Vではエスケープされているので.リテラルを表す
+
+
+
+
+
+/******* 検索 ************/
+/{keyword}  前方検索
+?{keyword}　後方検索
+n			次のマッチにジャンプ
+N			前のマッチにジャンプ
+/<up>		検索履歴の呼び出し
+:set hlsearch 強調表示
+:set nohlserch 強調表示の無効化
+:set incsearch　インクリメンタル検索
+:set noincsearch インクリメンタル検索の無効化
+:set ingnorecase
+:set noignorecase
+:set smartcase  大文字が入力されたらignorecaseを無効化
+
+/***** 置換　***/
+:[range]s[ubstitute]/{pettern}/{string/[flags]
+
+Four
+Four
+fOur
+fouR
+four
+
+
+/***** global command ***/
+:globalを使うと特定のパターンにマッチした各行にEXコマンドを実行できる
+:[range]g/{pattern}/[cmd]
+
+<ol>
+	<li>
+		<a href"#">show invisibles</a>
+	</li>
+	<li>
+		<a href="#">tabs ans spases</a>
+	</li>
+</ol>

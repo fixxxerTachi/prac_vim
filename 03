@@ -1,0 +1,120 @@
+/****** レジスタ *****/
+/**Q practica lvimを修正する **/
+F[space] スペースにカーソル
+xp でスペースの削除貼り付け
+practical vim
+
+/**Q 1,2行目を入れ替える **/
+2
+1
+3
+/**A 
+2をdd
+pで貼り付け
+**/
+
+
+/***Q somethingInTheWayをcollectionで置き換え***/
+collection = getCollection();
+process(collection,,target);
+
+/** レジスタの種類 **/
+無名レジスタ　""
+ヤンクレジスタ "0 ヤンクレジスタを使えばヤンクしたのに上書きした問題が解決できる
+名前つきレジスタ "a ~ "z
+ブラックホールレジスタ　"_ レジスタに登録しない消去専用レジスタ
+
+/***A**/
+yiw　collectionのヤンク
+jww  somethi...の単語の先頭に移動
+diw  someth..の削除
+"0P 貼り付け
+
+/**A**/
+"ayiw 名前つきレジスタでヤンク
+jww
+diw
+"aP
+
+/***A***/
+yiw
+jww
+"_diw  ブラックホールレジスタで消去
+P
+
+/***A***/
+yiw collectionのヤンク
+jww
+ve  somethis...の末尾まで選択(e 単語の末尾に移動)
+P
+
+
+/***Q somethingInTheWayをcollectionで置き換え***/
+collection = getCollection();
+process(collection,,target);
+  
+/** A **
+yiw
+jww
+ciw<C-r>0  挿入モードでヤンクレジスタの内容を挿入できる
+
+
+/*****Q <tr>~<tr>のコピペ *****/
+<table>
+
+	<tr>
+		<td>hoge</td>
+		<td>buffer</td>
+	</tr>
+
+</table>
+
+/*A **************
+yap 段落と空白行をヤンク
+gP　カーソル行の上にペーストしカーソルは末尾に移動
+
+
+
+/****** マクロ ******/
+/** Q　行頭にvar , 行末に；を追加する ***/
+qa  レジスタaにマクロの開始
+A;  行末に；追加
+Ivar <cr>  行頭にvar追加　//I 行頭に移動挿入モード
+q 　マクロの終了
+@a  レジスタaのマクロ実行
+@@  直前のマクロの実行
+
+/*******************************************/
+foo = 1;
+var bar = 'a';
+var foobar = foo + bar;
+
+/*** Q +の前後に空白を挿入する ***/
+f+   + にカーソル
+s + <cr> sで+を消去して挿入モード　+  と入力
+qq;.q qにマクロ登録開始、;で次の＋に移動 .で繰り返し　qでマクロ登録
+22@q 22回マクロ実行
+*************************************/　
+x = "("+a+","+b+","+c+","+d+","+e+")";
+
+/**Q 1) One ...に変更 **/
+qa   レジスタaにマクロ開始
+0f,  カーソルを先頭にして,にカーソル
+r)   ,を)に置換
+w~   次の単語の先頭に移動して~で大文字変換
+j    行移動
+q　　マクロ終了
+3@a 　マクロ実行
+
+1, one
+2, two
+3, three
+4, four
+
+1) One
+2) Two
+//break up the memony
+3, three
+4, four
+4, four
+

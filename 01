@@ -2,10 +2,10 @@ var foo=1;
 
 var foobbr=foo + bar;
 
-/***** S 行を削除して挿入モード ********/
+/***** s 行を削除して挿入モード ********/
 /***** s カーソル文字を削除して挿入モード ***/
-/**** f[char] 指定した文字に移動　; 次の変更対象に移動 ****/
-fjafjaljfjslajlfj:
+/**** f[char] 指定した文字に移動　; 次の変更対象に移動 ,　で戻る****/
+
 
 abaaaalllllallllll
 jf + ljljflajl var
@@ -14,15 +14,16 @@ jf + ljljflajl var
 /*** cw　単語を削除して挿入モード　****/
 /*** dw  単語を削除　***/
 /*** c$ カーソルから行末まで削除して挿入モード */
+
 if you are copy wieth this,
-we'll lauch as soon as we have the copy
+we'll  as soon as you have the copy
 
 /**** daw 単語を削除する ***/
-this is a sen
+this is a ;
 
 /**** blogをnewsに置き換えて0pxを-180pxにする***/
 /** yyp カーソル行をコピーして貼り付け ***/
-/** cW　単語を削除して挿入モード ***/
+/** cw　単語を削除して挿入モード ***/
 /** f0　0に移動　**/
 /** 180<c-x> で　数字を-180 **/
 .blog,news { background-image: url(/sprite.png); }
@@ -34,13 +35,13 @@ this is a sen
 /** d{2}w **/
 /** c{2}w **/
 /** dw. 単語を削除して繰り返す **/
-Delete more than one word
+delete more than one word
 
 /*** 挿入モードでの削除 ***/
 <c-h> 直前の文字を削除
 <c-w> 直前の単語を削除
 <c-u> 行頭まで削除
-
+if(hgoe=hoge && $hoge)
 
 /*** 挿入ノーマルモード <c-o> ***/
 挿入モードでノーマルモードに切り替え
@@ -49,34 +50,39 @@ Delete more than one word
 
 /***　行頭の本のタイトルをレジスタにヤンクしてから挿入モードで行の末尾に貼り付ける ***/
 /* yt, ,までをヤンク？ */
-/* jA 次の行に移動してカーソルを行末に移動して挿入モード */
+/* ja 次の行に移動してカーソルを行末に移動して挿入モード */
 /* :reg レジスタの内容を確認 */
 /* <c-r>0 0番目のレジスタを貼り付け */
-practical Vim, by Drew Neil
-Read Drew Neil's 
-
+practical vim, by drew neil
+hgoe drew neil's ig
+if($hgoe='hgeo'  && $jvi='jhoge'){
+	echo 'hgeo';
+};
 /*** ちょっとした計算 ****/
 挿入モードで<c-r>=8*8<cr>
 
-/*** Unicod ***/
+/*** unicod ***/
 ga カーソル文字のコードを確認
 <c-v>u{コード} 16進数での文字を挿入
 
 /*** 置換モード **/
-R 置換モード
-r{char} カーソル文字を置換して挿入モード
+r 置換モード
+r{char} カーソル文字を置換してノーマルモード
 
-fjsfjls8o
+fjsfjlsjo
 
 /*** ヴィジュアルモード ***/
 viw 単語を選択
 c　単語を削除して挿入モード
 
-This is visual mode practice.
+this is ihoge  practice.
+if($hgoe=hgoe && $hoge='hgoe'){
+	echo 'hoge';
+};
 
 /***ヴィジュアルモードの有効化***
 v 文字指向
-V 行指向
+v 行指向
 <c-v> 矩形
 gv 直前の選択範囲を再度選択
 それぞれのモードで同じモードのキーを押すとノーマルモードに戻る
@@ -84,11 +90,18 @@ o 始点と終点をいれかえ
 
 fjsljflsl
 fjsljflsl
+def fib(n):
+	a,b = 0,1
+	while a < n:
+		print a,
+		a,b = b ,a+b
+fib(42)
+
 
 /*** タグの中身を選択する(visually select inside the tag) ***/
 $vit
 
-<a href="#">hoge</a>
+<a href="#">one</a>
 <a href="#">three</a>
 <a href="#">three</a>
 
@@ -96,14 +109,32 @@ $vit
 
 <!doctype html>
 <html>
-	<head><title>Practical Viewm</title></head>
-	<body><h1>Practival Vim</h1></body>
+	<head><title>practical viewm</title></head>
+	<body><h1>practival vim</h1></body>
 </html>
 
+/*** コマンドラインでコピー ***/
+:[range]copy(t){address}
+:2,5t.  /*=> 2行目から5行目を.(カーソル行）にコピー
+:t6    /*=> 現在行を6行目の下にコピー
+:t.   /*=> 現在行をコピー
+:'<,'>t0  /=>ヴィジュアルな選択範囲をファイル先頭にコピー
 
+/*** コマンドラインで移動　***/
+:'<,'> m$   /***=>選択範囲をファイルの末尾に移動
+
+<!doctype html>
+<html>
+	<head><title>practical viewm</title></head>
+	<body><h1>practival vim</h1></body>
+</html>
+
+var foo=1;
+var bar='a';
+var baz='z';
 
 /*** シェルでプログラムを実行 ***/
-:!{cmd} ex  :!php % で現在のスクリプトを実行できる
+:!{cmd}  :!php % で現在のスクリプトを実行できる
 :shell
 <c-z>でvimを実行しているプロセスが一時停止される
 	実行中のジョブを知るには job コマンド
